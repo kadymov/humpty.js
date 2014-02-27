@@ -1,4 +1,4 @@
-Humpty.JS - Syntax Highlighter Library
+Humpty.JS - Syntax Highlighting Library
 ======================================
 
 Files
