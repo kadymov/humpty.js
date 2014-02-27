@@ -1,0 +1,266 @@
+<html>
+<head>
+    <title>Humpty.JS - Syntax highlighting for web programming languages</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 120px 50px 50px 50px;
+            font: 16px/18px Arial;
+        }
+
+        h1, h2, h3 {
+            color: #578;
+        }
+
+        h1 {
+            font-style: italic;
+        }
+
+        pre {
+            display: block;
+            font-family: Consolas, Monaco, Lucida Console, monospace;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px dotted black;
+        }
+
+        a {
+            color: #46a;
+            text-decoration: none;
+            border-bottom: 1px dotted #46a;
+        }
+
+        a:hover {
+            color: #68f;
+        }        
+
+        .name {
+            color: #8c8;
+            border-left: 2px solid #8c8;
+            border-right: 2px solid #8c8;
+            padding: 0 10px;
+            font-style: normal;
+        }    
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            padding-bottom: 20px;
+            width: 100%;
+            z-index: 1;
+            box-shadow: 0 0 10px #555;
+            padding-left: 50px;
+        }
+
+        .contents {
+            box-shadow: 0 0 8px #ccc;
+            width: 300px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: #46a;
+            list-style: square;
+            line-height: 25px;
+        }
+
+        .anchor {
+            position: relative;
+            top: -120px;
+            display: block;
+            visibility: hidden;
+        }
+
+        .dl-link {
+            border-radius: 7px;
+            border: 1px solid #ACCEE0;
+            border-bottom: 3px solid #ACCEE0;
+            padding: 10px;
+            background-color: #E7EEF2;
+            color: #578;
+            margin: 5px 10px 5px 0;
+            display: inline-block;
+            box-shadow: inset 0 0 2px #fff;
+            font-weight: bold;
+        }
+
+        .dl-link:hover {
+            background-color: #D2E4EE;
+            color: #578;
+        }
+
+        .link-addr {
+            display: block;
+            color: #8ab;
+            border: 1px dotted #9CBED0;
+            padding: 3px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-style: italic;
+            background-color: #eee;
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+    </style>
+
+
+    <!-- humpthy.JS -->
+    <link rel="stylesheet" type="text/css" href="humpty.css" />
+    <link id="humpty-theme" rel="stylesheet" type="text/css" href="humpty-light.css" />
+    <script type="text/javascript" src="humpty.js"></script>
+    <!-- /humpthy.JS -->
+
+
+    <script type="text/javascript">
+        function selectTheme() {
+            var val = event.target.value;
+            document.getElementById('humpty-theme').setAttribute('href', val);
+        }
+
+        function scroll () {
+            window.scrollBy(0, -100);
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="header">
+    <h1><span class="name">Humpty.JS</span> - Syntax Highlighter Test</h1>
+    Theme Switcher:
+    <select id="theme-switcher" onChange="selectTheme(this);">
+      <option value="humpty-light.css">Light theme</option>
+      <option value="humpty-dark.css">Dark theme</option>
+    </select>
+</div>
+
+<h2>Contents</h1>
+<ul class="contents">
+    <li><a href="#demo">Demonstration</a></li>
+    <li><a href="#using">Using</a></li>
+    <li><a href="#download">Download</a></li>
+    <li><a href="#author">Author and rights</a></li>
+</ul>
+
+<a name="demo" class="anchor"></a>
+<h2>Demonstration</h1>
+
+<h3>JavaScript</h2>
+<pre lang="js">
+/*    This is a cool test function
+ *    and block comment
+ */
+function test (arg) {
+    var result = null,
+        minLen = 0x3;
+
+    console.log(this);
+
+    if (typeof arg === 'undefined') {
+        throw new Error('arg is undefined');    // This is an error!
+    }
+
+    test = arg.replace(/[,;\s]/g, '\r\n');
+
+    return result.length >= minLen ? result : 'Result is too small!';
+}
+</pre>
+
+<h3>Html</h2>
+<pre lang="html">
+&lt;!-- Somewhere in the 
+    code of a Web page --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;shl.js&quot;&gt;&lt;/script&gt;
+&lt;div class="hello-div"&gt;Hello&lt;/div&gt;
+</pre>
+
+<h3>Css</h2>
+<pre lang="css">
+/*    
+    This is block comment
+*/
+.class, #id, a[attr="1"] {
+    width: 100%; height: 50px;
+    font-style: italic;
+    opacity: 0.5;
+    color: #fff;
+}
+</pre>
+
+<h3>Plain test (Unknown syntax)</h2>
+<pre>
+Humpty Dumpty sat on a wall,
+Humpty Dumpty had a great fall.
+All the king's horses and all the king's men
+Couldn't put Humpty together again.
+</pre>
+
+<a name="using" class="anchor"></a>
+<h2>Using</h2>
+<p>Place the following code in the HEAD section of your code:</p>
+<pre lang="html">
+&lt;link id="humpty-theme" rel="stylesheet" type="text/css" href="humpty-light.css" /&gt;
+&lt;!-- or &lt;link id="humpty-theme" rel="stylesheet" type="text/css" href="humpty-dark.css" /&gt; --&gt;
+&lt;script type="text/javascript" src="humpty.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3>Configuration</h3>
+<pre lang="js">
+/* Before "onLoad" event */
+Humpty.config({     // &lt;-- this is the default configuration
+    autorun         : true,
+    hideLineNumbers : false,
+    alwaysOpen      : false,
+    codeTags        : ['code', 'pre']
+});
+</pre>
+
+<a name="download" class="anchor"></a>
+<h2>Download</h2>
+
+<a href="https://github.com/kadymov/humpty.js" class="dl-link" target="_blank">GitHub repository
+    <span class="link-addr">https://github.com/kadymov/humpty.js</span>
+</a>
+<a href="http://kadymov.pw" class="dl-link" target="_blank">Official site
+    <span class="link-addr">www.kadymov.pw</span>
+</a>
+
+<a name="author" class="anchor"></a>
+<h2>Author and rights</h2>
+<p><b>Author:</b> Aleksandr Kadymov (Website: <a href="http://kadymov.pw">www.kadymov.pw</a>)</p>
+<p><b>License:</b> MIT (<a href="https://raw.github.com/kadymov/humpty.js/master/LICENSE">https://raw.github.com/kadymov/humpty.js/master/LICENSE</a>)</p>
+<pre>
+The MIT License (MIT)
+
+Copyright (c) 2014 Aleksandr Kadymov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</pre>
+
+<div class="footer">Copyright (c) 2014 Aleksandr Kadymov</div>
+
+</body>
+</html>

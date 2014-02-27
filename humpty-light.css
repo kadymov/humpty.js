@@ -1,0 +1,77 @@
+/*
+    Humpty.JS - Syntax Highlighter Library
+    The MIT License - https://raw.github.com/kadymov/humpty.js/master/LICENSE
+    Copyright (c) 2014 Aleksandr Kadymov (www.kadymov.pw)
+*/
+
+/****** Humpty Customization ******/
+
+/* Basic settings */
+
+.humpty-code {
+    background: #f8f8f8;
+    color: #555;
+}
+
+.humpty-code li:hover {
+    background: #eee;
+}
+
+.humpty-code li:before {
+	color: #bbb;
+	background-color: #eee;
+	border-right: 3px solid #6c6;
+}
+
+.humpty-open-btn {
+    background-color: #eee;
+    color: #888;
+}
+
+.humpty-open-btn:hover {
+    background-color: #ddd;
+    color: #88f;
+}
+
+/* Syntax highlighting settings */
+
+.humpty-code .keyword,
+.humpty-code .tag {
+	color: #FF1493;
+}
+
+.humpty-code .value {
+	color: #EEAA00;
+}
+
+.humpty-code .string,
+.humpty-code .string *,
+.humpty-code .regexp,
+.humpty-code .regexp * {
+	color: #00bb00 !important;
+}
+
+.humpty-code .declaration {
+	color: #00f;
+}
+
+.humpty-code .special {
+    color: #008;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.humpty-code .line-comment,
+.humpty-code .line-comment *,
+.humpty-code .block-comment,
+.humpty-code .block-comment * {
+    color: #aaa !important;
+}
+
+.humpty-code .selectors {
+    color: #00f;
+}
+
+.humpty-code .params {
+    color: red;
+}
