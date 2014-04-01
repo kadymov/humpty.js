@@ -12,11 +12,10 @@ Using
 -----
 Place the following code in the HEAD section of your code:
 <pre>
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;srjs.css&quot;&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;srjs.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    srjs.show();
-&lt;/script&gt;</pre>
+&lt;link id="humpty-theme" rel="stylesheet" type="text/css" href="humpty-light.css" /&gt;
+&lt;!-- or &lt;link id="humpty-theme" rel="stylesheet" type="text/css" href="humpty-dark.css" /&gt; --&gt;
+&lt;script type="text/javascript" src="humpty.js"&gt;&lt;/script&gt;</pre>
+
 
 
 Links
